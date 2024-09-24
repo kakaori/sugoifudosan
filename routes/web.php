@@ -2,7 +2,8 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\Partner\PartnerProfileController;
+use App\Http\Controllers\PartnerProfileController as ControllersPartnerProfileController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -19,9 +20,9 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::middleware(['auth:partner'])->group(function () { 
-    Route::get('/partner/profile', [ProfileController::class, 'edit'])->name('partner.profile.edit');
-    Route::patch('/partner/profile', [ProfileController::class, 'update'])->name('partner.profile.update');
-    Route::delete('/partner/profile', [ProfileController::class, 'destroy'])->name('partner.profile.destroy');
+    Route::get('/partner/profile', [ControllersPartnerProfileController::class, 'edit'])->name('partner.profile.edit');
+    Route::patch('/partner/profile', [ControllersPartnerProfileController::class, 'update'])->name('partner.profile.update');
+    Route::delete('/partner/profile', [ControllersPartnerProfileController::class, 'destroy'])->name('partner.profile.destroy');
 });
 
 require __DIR__.'/auth.php';
