@@ -1,66 +1,230 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Sugoi Fudosan
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+## ローカル開発環境
 
-## About Laravel
+### 1. 構築手順
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+#### Docker のインストール
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+-   1-1. Docker インストーラーを[ダウンロード](https://www.docker.com/get-started)
+-   1-2. Docker をインストール
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+#### プロジェクトのソースコードを取得と環境設定
 
-## Learning Laravel
+-   1-3. ソースコードのダウンロード
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+    ```
+    git clone git@github.com:kakaori/sugoifudosan.git
+    cd sugoifudosan
+    ```
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+-   1-4. 環境変数を設定
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+    ```
+    cp src/.env.example src/.env
+    ```
 
-## Laravel Sponsors
+### 2. 初回の準備
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+-   2-1. Composerをインストール (TODO)
 
-### Premium Partners
+-   2-2. sailコマンドをエイリアスに登録
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+    ~/.zshrc や ~/.bashrc に追記
+    ```
+    alias sail='[ -f sail ] && sh sail || sh vendor/bin/sail'
+    ```
 
-## Contributing
+-   2-3. Laravel Sailを起動
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+    ```
+    sail up -d
+    ```
 
-## Code of Conduct
+-   2-4. Composerのautoloadファイルを作成
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+    ```
+    sail composer dump-autoload
+    ```
 
-## Security Vulnerabilities
+-   2-5. npmパッケージをインストール
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+    ```
+    sail npm install
+    ```
 
-## License
+-   2-6. テストデータ作成 (不必要)
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+    ```
+    sail artisan migrate --seed
+    ```
+
+### 3. 起動と終了
+
+-   3-1. Laravel Sailを起動
+
+    ```
+    sail up -d
+    ```
+
+-   3-2. ViteのHMRを起動
+
+    ```
+    sail npm run dev
+    ```
+
+-   3-3. URLを表示
+
+    ```
+    http://localhost
+    ```
+
+-   3-4. 終了
+
+    (コンテナを停止)
+
+    ```
+    sail stop
+    ```
+
+    (コンテナを削除)
+
+    ```
+    sail down
+    ```
+
+    (コンテナとボリュームを削除)  
+    MySQLのデータをリセットする際に使用
+
+    ```
+    sail down --volumes
+    ```
+
+### 4. 各URL
+
+-   Sugoi Fudosan
+    - http://localhost
+
+### 5. 開発時によく使うコマンド
+
+-   5-1. ViteのHMRを起動
+
+    ```
+    sail npm run dev
+    ```
+
+-   5-2. 本番向けビルド
+
+    ```
+    sail npm run build
+    ```
+
+-   5-3. MySQLのクエリログ確認
+
+    ```
+    sail exec mysql tail -f /var/lib/mysql/query.log
+    ```
+
+-   5-4. コンテナプロセス確認
+
+    ```
+    sail ps
+    ```
+
+-   5-5. コンテナにアクセス
+
+    ```
+    sail shell
+    ```
+
+-   5-6. Seederを実行
+
+    ```
+    sail artisan db:seed
+    ```
+
+-   5-7. PHPUnit実行
+
+    ```
+    sail test
+    ```
+
+-   5-8. Laravel Pintで整形
+
+    ```
+    sail pint
+    ```
+
+-   5-9. PHPCSを実行
+
+    ```
+    sail composer phpcs
+    ```
+
+-   5-10. PHPCSで整形
+
+    ```
+    sail composer phpcs-fix
+    ```
+
+-   5-11. Laravel PintとPHPCSで整形
+
+    ```
+    sail composer fix
+    ```
+
+-   5-12. PHPMDを実行
+
+    ```
+    sail composer phpmd
+    ```
+
+-   5-13. PHPStanを実行
+
+    ```
+    sail composer phpstan
+    ```
+
+-   5-14. ESLintを実行
+
+    ```
+    sail npm run eslint
+    ```
+
+-   5-15. ESLintで整形
+
+    ```
+    sail npm run eslint:fix
+    ```
+
+-   5-16. Prettierを実行
+
+    ```
+    sail npm run prettier
+    ```
+
+-   5-17. Prettierで整形
+
+    ```
+    sail npm run prettier:fix
+    ```
+
+-   5-18. Stylelintを実行
+
+    ```
+    sail npm run stylelint
+    ```
+
+-   5-19. Stylelintで整形
+
+    ```
+    sail npm run stylelint:fix
+    ```
+
+-   5-20. Storybookを起動
+
+    ```
+    sail npm run storybook
+    ```
+
+### 6. デプロイ方法 (TODO)
