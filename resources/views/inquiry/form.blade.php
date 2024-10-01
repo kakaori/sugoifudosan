@@ -1,0 +1,1 @@
+inquiry/form.blade.phpだよ

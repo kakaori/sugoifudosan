@@ -62,4 +62,11 @@ class InquiryController extends Controller
     {
         //
     }
+
+    public function form(Inquiry $inquiry)
+    {
+        //
+        return view('inquiry.form', compact('inquiry')); // ビューを返す
+    }
+
 }

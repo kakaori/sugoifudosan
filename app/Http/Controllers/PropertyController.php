@@ -12,7 +12,8 @@ class PropertyController extends Controller
      */
     public function index()
     {
-        //
+        $properties = Property::all(); // プロパティを取得
+        return view('property.index', compact('properties')); // ビューを返す
     }
 
     /**
@@ -37,6 +38,8 @@ class PropertyController extends Controller
     public function show(Property $property)
     {
         //
+        $properties = Property::all(); // プロパティを取得
+        return view('property.show', compact('properties')); // ビューを返す
     }
 
     /**
@@ -61,5 +64,16 @@ class PropertyController extends Controller
     public function destroy(Property $property)
     {
         //
+    }
+
+    public function types()
+    {
+        //types/{物件種別}一覧を表示するアクション
+    }
+
+
+    public function prefectures()
+    {
+        //prefectures/{都道府県}一覧を表示するアクション
     }
 }

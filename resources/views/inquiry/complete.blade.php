@@ -1,0 +1,1 @@
+inquiry/complete.blade.phpだよ
