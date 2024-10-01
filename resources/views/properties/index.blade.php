@@ -1,0 +1,1 @@
+properties/index.blade.phpだよ

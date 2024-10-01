@@ -1,1 +1,0 @@
-property/show.blade.phpだよ
