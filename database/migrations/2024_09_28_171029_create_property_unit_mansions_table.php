@@ -164,7 +164,7 @@ return new class extends Migration
             ////////物件の画像
             $table->json('images')->nullable(); // 画像を保存するカラム（JSON形式）
 
-            // 楽待掲載ステータスを追加
+            // 掲載ステータスを追加
             $table->integer('rakumachi_publication_status')->nullable(); // 掲載ステータス
 
             $table->softDeletes();
