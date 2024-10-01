@@ -1,0 +1,1 @@
+properties/prefectures.blade.phpだよ

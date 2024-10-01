@@ -1,1 +1,0 @@
-property/types.blade.phpだよ

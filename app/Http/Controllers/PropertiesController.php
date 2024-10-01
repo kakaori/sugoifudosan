@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Property;
 use Illuminate\Http\Request;
 
-class PropertyController extends Controller
+class PropertiesController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +13,7 @@ class PropertyController extends Controller
     public function index()
     {
         $properties = Property::all(); // プロパティを取得
-        return view('property.index', compact('properties')); // ビューを返す
+        return view('properties.index', compact('properties')); // ビューを返す
     }
 
     /**
@@ -35,11 +35,11 @@ class PropertyController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Property $property)
+    public function show(string $id)
     {
-        //
-        $properties = Property::all(); // プロパティを取得
-        return view('property.show', compact('properties')); // ビューを返す
+        $property = Property::query()->findOrFail($id);
+
+        return view('properties.show', compact('property')); // ビューを返す
     }
 
     /**
