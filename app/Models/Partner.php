@@ -11,6 +11,10 @@ class Partner extends Authenticatable
 {
     use HasFactory, Notifiable;
 
+    public function propertyunitnansions()
+    {
+      return $this->hasMany(PropertyUnitMansion::class);
+    }
     /**
      * The attributes that are mass assignable.
      *
