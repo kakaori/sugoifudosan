@@ -7,9 +7,10 @@ use App\Http\Controllers\PropertiesController;
 use App\Http\Controllers\InquiryController;
 use App\Http\Controllers\PartnerProfileController as ControllersPartnerProfileController;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+Route::get('/', [PropertiesController::class, 'welcome'])->name('welcome');
 
 Route::get('/dashboard', function () {
     return view('dashboard');

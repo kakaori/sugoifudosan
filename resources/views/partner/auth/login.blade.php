@@ -2,7 +2,7 @@
     <!-- Session Status -->
     <x-auth-session-status class="mb-4" :status="session('status')" />
 
-    <h1>パートナーログイン</h1>
+    <h1>不動産会社ログイン</h1>
     <form method="POST" action="{{ route('partner.login') }}">
         @csrf
 

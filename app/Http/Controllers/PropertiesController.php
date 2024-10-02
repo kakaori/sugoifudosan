@@ -76,4 +76,10 @@ class PropertiesController extends Controller
     {
         //prefectures/{都道府県}一覧を表示するアクション
     }
+
+    public function welcome()
+    {
+        $properties = Property::orderBy('created_at', 'desc')->get(); // プロパティを新着順で取得
+        return view('welcome', compact('properties')); // ビューを返す
+    }
 }
