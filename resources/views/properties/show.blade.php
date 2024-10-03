@@ -10,24 +10,24 @@
         </div>
   
         <div class="md:pt-8">
-          <p class="font-bold text-indigo-500">{{ $property->property_type }}</p>
+          <p class="font-bold text-gray-500">{{ $property->property_type }}</p>
   
           <h1 class="mb-4 text-2xl font-bold text-gray-800 sm:text-3xl md:mb-6">{{ $property->property_name }}</h1>
 
             <div class="flex flex-col p-2 md:p-4">
                 <div class="text-sm font-semibold sm:text-base">販売価格</div>
-                <div class="text-xl font-bold text-indigo-500 sm:text-2xl md:text-3xl">{{ number_format($property->sale_price / 10000) }}万円</div>
+                <div class="text-xl font-bold text-rose-500 sm:text-2xl md:text-3xl">{{ number_format($property->sale_price / 10000) }}万円</div>
             </div>
             @if($property->gross_yield)
             <div class="flex flex-col p-2 md:p-4">
                 <div class="text-sm font-semibold sm:text-base">表面利回り</div>
-                <div class="text-xl font-bold text-indigo-500 sm:text-2xl md:text-3xl">{{ $property->gross_yield }}%</div>
+                <div class="text-xl font-bold text-rose-500 sm:text-2xl md:text-3xl">{{ $property->gross_yield }}%</div>
             </div>
             @endif
             @if($property->expected_annual_income)
             <div class="flex flex-col p-2 md:p-4">
                 <div class="text-sm font-semibold sm:text-base">想定年間収入</div>
-                <div class="text-xl font-bold text-indigo-500 sm:text-2xl md:text-3xl">{{ number_format($property->expected_annual_income / 10000) }}万円</div>
+                <div class="text-xl font-bold text-rose-500 sm:text-2xl md:text-3xl">{{ number_format($property->expected_annual_income / 10000) }}万円</div>
             </div>
             @endif
         </div>
@@ -37,11 +37,11 @@
         <div class="mx-auto max-w-screen-2xl px-4 md:px-8">
           <div class="flex flex-col items-center justify-between gap-4 rounded-lg bg-gray-100 p-4 sm:flex-row md:p-8">
             <div>
-              <h2 class="text-xl font-bold text-indigo-500 md:text-2xl">{{ $property->partner->name }}</h2>
+              <h2 class="text-xl font-bold text-gray-950 md:text-2xl">{{ $property->partner->name }}</h2>
               <p class="text-gray-600">お問い合わせは「すごい不動産に掲載されている物件を見た」とお伝えください。</p>
             </div>
       
-            <a href="#" class="flex inline-block rounded-lg bg-indigo-500 px-8 py-3 text-center text-sm font-semibold text-white outline-none ring-indigo-300 transition duration-100 hover:bg-indigo-600 focus-visible:ring active:bg-indigo-700 md:text-base">
+            <a href="#" class="flex inline-block rounded-lg bg-gray-950 px-8 py-3 text-center text-sm font-semibold text-white outline-none ring-gray-300 transition duration-100 hover:bg-gray-600 focus-visible:ring active:bg-gray-700 md:text-base">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2 lucide lucide-mail"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
                 資料請求する(無料)</a>
           </div>
@@ -131,11 +131,11 @@
         <div class="mx-auto max-w-screen-2xl px-4 md:px-8">
           <div class="flex flex-col items-center justify-between gap-4 rounded-lg bg-gray-100 p-4 sm:flex-row md:p-8">
             <div>
-              <h2 class="text-xl font-bold text-indigo-500 md:text-2xl">{{ $property->partner->name }}</h2>
+              <h2 class="text-xl font-bold text-gray-950 md:text-2xl">{{ $property->partner->name }}</h2>
               <p class="text-gray-600">お問い合わせは「すごい不動産に掲載されている物件を見た」とお伝えください。</p>
             </div>
       
-            <a href="#" class="flex inline-block rounded-lg bg-indigo-500 px-8 py-3 text-center text-sm font-semibold text-white outline-none ring-indigo-300 transition duration-100 hover:bg-indigo-600 focus-visible:ring active:bg-indigo-700 md:text-base">
+            <a href="#" class="flex inline-block rounded-lg bg-gray-950 px-8 py-3 text-center text-sm font-semibold text-white outline-none ring-gray-300 transition duration-100 hover:bg-gray-600 focus-visible:ring active:bg-gray-700 md:text-base">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2 lucide lucide-mail"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
                 資料請求する(無料)</a>
           </div>

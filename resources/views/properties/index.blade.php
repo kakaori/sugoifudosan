@@ -26,7 +26,7 @@
 
                 <div class="flex flex-col py-2 md:py-4">
                     <div class="text-sm font-semibold sm:text-base">販売価格</div>
-                    <div class="text-xl font-bold text-indigo-500 sm:text-2xl md:text-3xl">{{ number_format($property->sale_price / 10000) }}万円</div>
+                    <div class="text-xl font-bold text-rose-500 sm:text-2xl md:text-3xl">{{ number_format($property->sale_price / 10000) }}万円</div>
                 </div>
             </div>
         </a>

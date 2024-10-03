@@ -18,13 +18,13 @@
             
                 <!-- nav - start -->
                 <nav class="hidden gap-12 lg:flex">
-                    <a href="{{ url('/search') }}" class="text-lg font-semibold text-gray-600 transition duration-100 hover:text-indigo-500 active:text-indigo-700">収益物件を探す</a>
+                    <a href="{{ url('/search') }}" class="text-lg font-semibold text-gray-600 transition duration-100 hover:text-gray-500 active:text-gray-700">収益物件を探す</a>
 
                     @if (Route::has('partner.login'))
                         @auth('partner')
-                            <a href="{{ url('/partner/dashboard') }}" class="text-lg font-semibold text-gray-600 transition duration-100 hover:text-indigo-500 active:text-indigo-700">不動産会社マイページ</a>
+                            <a href="{{ url('/partner/dashboard') }}" class="text-lg font-semibold text-gray-600 transition duration-100 hover:text-gray-500 active:text-gray-700">不動産会社マイページ</a>
                         @else
-                        <a href="{{ route('partner.login') }}" class="text-lg text-gray-600 transition duration-100 hover:text-indigo-500 active:text-indigo-700">不動産会社ログイン</a>
+                        <a href="{{ route('partner.login') }}" class="text-lg text-gray-600 transition duration-100 hover:text-gray-500 active:text-gray-700">不動産会社ログイン</a>
                         @endauth
                     @endif
                 </nav>
@@ -34,19 +34,19 @@
                 @if (Route::has('login'))
                 <div class="-ml-8 hidden flex-col gap-2.5 sm:flex-row sm:justify-center lg:flex lg:justify-start">
                     @auth
-                        <a href="{{ url('/dashboard') }}" class="inline-block rounded-lg bg-indigo-500 px-8 py-3 text-center text-sm font-semibold text-white outline-none ring-indigo-300 transition duration-100 hover:bg-indigo-600 focus-visible:ring active:bg-indigo-700 md:text-base">マイページ</a>
+                        <a href="{{ url('/dashboard') }}" class="inline-block rounded-lg bg-gray-500 px-8 py-3 text-center text-sm font-semibold text-white outline-none ring-gray-300 transition duration-100 hover:bg-gray-600 focus-visible:ring active:bg-gray-700 md:text-base">マイページ</a>
                         @else
 
                         @if (Route::has('register'))
-                        <a href="{{ route('register') }}" class="inline-block rounded-lg px-4 py-3 text-center text-sm font-semibold text-gray-500 outline-none ring-indigo-300 transition duration-100 hover:text-indigo-500 focus-visible:ring active:text-indigo-600 md:text-base">新規登録</a>
+                        <a href="{{ route('register') }}" class="inline-block rounded-lg px-4 py-3 text-center text-sm font-semibold text-gray-500 outline-none ring-gray-300 transition duration-100 hover:text-gray-500 focus-visible:ring active:text-gray-600 md:text-base">新規登録</a>
                         @endif
 
-                        <a href="{{ route('login') }}" class="inline-block rounded-lg bg-indigo-500 px-8 py-3 text-center text-sm font-semibold text-white outline-none ring-indigo-300 transition duration-100 hover:bg-indigo-600 focus-visible:ring active:bg-indigo-700 md:text-base">ログイン</a>
+                        <a href="{{ route('login') }}" class="inline-block rounded-lg bg-gray-950 px-8 py-3 text-center text-sm font-semibold text-white outline-none ring-gray-300 transition duration-100 hover:bg-gray-600 focus-visible:ring active:bg-gray-700 md:text-base">ログイン</a>
                     @endauth
                 </div>
                 @endif
             
-                <button type="button" class="inline-flex items-center gap-2 rounded-lg bg-gray-200 px-2.5 py-2 text-sm font-semibold text-gray-500 ring-indigo-300 hover:bg-gray-300 focus-visible:ring active:text-gray-700 md:text-base lg:hidden">
+                <button type="button" class="inline-flex items-center gap-2 rounded-lg bg-gray-200 px-2.5 py-2 text-sm font-semibold text-gray-500 ring-gray-300 hover:bg-gray-300 focus-visible:ring active:text-gray-700 md:text-base lg:hidden">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 20 20" fill="currentColor">
                     <path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h6a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd" />
                     </svg>
