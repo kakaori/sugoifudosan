@@ -35,7 +35,7 @@ Route::get('/prefectures/{slug}', [PropertiesController::class, 'prefectures'])-
 Route::get('/properties/{id}', [PropertiesController::class, 'show'])->name('properties.show');
 
 Route::get('/inquiry/form/{id}', [InquiryController::class, 'form'])->name('inquiry.form');
-Route::get('/inquiry/complete/{id}', [InquiryController::class, 'complete'])->name('inquiry.complete');
+Route::get('/inquiry/complete', [InquiryController::class, 'complete'])->name('inquiry.complete');
 
 require __DIR__.'/auth.php';
 require __DIR__.'/partner.php';
