@@ -69,4 +69,10 @@ class InquiryController extends Controller
         return view('inquiry.form', compact('inquiry')); // ビューを返す
     }
 
+    public function complete(Inquiry $inquiry)
+    {
+        //
+        $complete = true; // 変数を定義
+        return view('inquiry.complete', compact('complete')); // compactで使用
+    }
 }

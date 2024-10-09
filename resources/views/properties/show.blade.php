@@ -41,7 +41,7 @@
               <p class="text-gray-600">お問い合わせは「すごい不動産に掲載されている物件を見た」とお伝えください。</p>
             </div>
       
-            <a href="#" class="flex inline-block rounded-lg bg-gray-950 px-8 py-3 text-center text-sm font-semibold text-white outline-none ring-gray-300 transition duration-100 hover:bg-gray-600 focus-visible:ring active:bg-gray-700 md:text-base">
+            <a href="/inquiry/form/{{ $property->id }}" class="flex inline-block rounded-lg bg-gray-950 px-8 py-3 text-center text-sm font-semibold text-white outline-none ring-gray-300 transition duration-100 hover:bg-gray-600 focus-visible:ring active:bg-gray-700 md:text-base">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2 lucide lucide-mail"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
                 資料請求する(無料)</a>
           </div>
@@ -135,7 +135,7 @@
               <p class="text-gray-600">お問い合わせは「すごい不動産に掲載されている物件を見た」とお伝えください。</p>
             </div>
       
-            <a href="#" class="flex inline-block rounded-lg bg-gray-950 px-8 py-3 text-center text-sm font-semibold text-white outline-none ring-gray-300 transition duration-100 hover:bg-gray-600 focus-visible:ring active:bg-gray-700 md:text-base">
+            <a href="/inquiry/form/{{ $property->id }}" class="flex inline-block rounded-lg bg-gray-950 px-8 py-3 text-center text-sm font-semibold text-white outline-none ring-gray-300 transition duration-100 hover:bg-gray-600 focus-visible:ring active:bg-gray-700 md:text-base">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2 lucide lucide-mail"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
                 資料請求する(無料)</a>
           </div>
